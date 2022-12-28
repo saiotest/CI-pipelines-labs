@@ -2,11 +2,7 @@ name: 🚀CI run (MERGING) QA on CheckPass✅
 run-name: ${{github.actor}}👾 merged into MAIN from ${{github.ref_name}}
 
 on:
-  pull_request:
-    types:
-      - opened
-    branches:
-      - QA
+  workflow_dispatch:
 
 jobs:
     AutoMerge-into-Main:

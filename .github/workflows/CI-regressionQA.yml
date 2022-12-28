@@ -170,4 +170,15 @@ jobs:
                 labels: ['autoPullRequest']
                 });
 
+    AutoMerge-into-Main:
+      needs: [Create-PullRequest]
+      runs-on: ubuntu-latest
+      steps:
+        - name: 🧬Merge QA -> MAIN
+          uses: devmasx/merge-branch@master
+          with:
+            type: now
+            label_name: 'autoPullRequest'
+            target_branch: 'cypex' #ESTE ES LA RAMA PRINCIPAL DEL REPOSITORIO PRESENTE
+            github_token: ${{ github.token }}
 
